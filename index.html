@@ -4,161 +4,180 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#071d3b" />
-<meta name="description" content="衛武營歌劇院360°座位視角預覽" />
-<title>衛武營360°｜歌劇院座位視角</title>
+<meta name="description" content="探索衛武營：世界級建築、榕樹廣場、都會公園、歌劇院與360°座位視角。" />
+<title>探索衛武營｜不只是看一場演出</title>
 <style>
 :root{
-  --navy:#071d3b;
-  --navy2:#0d2c55;
-  --gold:#b87a22;
-  --gold2:#d9ad5d;
-  --cream:#faf7f0;
-  --ink:#13243d;
-  --muted:#677486;
-  --white:#fff;
-  --line:#eadcc2;
+  --navy:#071d3b;--navy2:#0d2c55;--gold:#b87a22;--gold2:#d9ad5d;
+  --cream:#faf7f0;--cream2:#f4efe5;--ink:#13243d;--muted:#667486;
+  --white:#fff;--line:#eadcc2;--green:#496d58;
 }
 *{box-sizing:border-box}
-html{background:var(--cream)}
-body{
-  margin:0;
-  color:var(--ink);
-  background:
-    radial-gradient(circle at 50% 0%,rgba(217,173,93,.13),transparent 34%),
-    var(--cream);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
-}
+html{scroll-behavior:smooth;background:var(--cream)}
+body{margin:0;color:var(--ink);background:radial-gradient(circle at 50% 0%,rgba(217,173,93,.14),transparent 34%),var(--cream);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
 a{color:inherit}
-.page{max-width:520px;min-height:100vh;margin:0 auto;background:#fff;box-shadow:0 0 38px rgba(3,20,42,.08)}
-.top{
-  padding:26px 24px 30px;
-  color:#fff;
-  text-align:center;
-  background:linear-gradient(145deg,var(--navy),#0b315f 72%,#123c6c);
-  position:relative;
-  overflow:hidden;
-}
-.top:before,.top:after{content:"";position:absolute;border:1px solid rgba(217,173,93,.38);border-radius:50%;width:260px;height:260px}
-.top:before{left:-175px;top:-110px}.top:after{right:-190px;bottom:-145px}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border:1px solid rgba(217,173,93,.75);border-radius:999px;color:#f3d59a;font-size:13px;letter-spacing:.08em;background:rgba(255,255,255,.04)}
-.eyebrow:before{content:"✦";font-size:10px}
-h1{font-family:"Noto Serif TC","PMingLiU",serif;font-size:34px;line-height:1.25;margin:20px 0 10px;letter-spacing:.02em;font-weight:800}
-.lead{margin:0 auto;max-width:390px;font-size:17px;line-height:1.75;color:#edf2f8}
-.gold{color:#f0c874}
-.content{padding:24px 20px 34px}
-.card{border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 10px 28px rgba(12,34,65,.07);overflow:hidden}
-.quick{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line);background:#fffdf9}
-.quick div{padding:16px 6px;text-align:center;font-size:13px;line-height:1.35;color:#536174;position:relative}
-.quick div+div:before{content:"";position:absolute;left:0;top:13px;bottom:13px;width:1px;background:var(--line)}
-.quick b{display:block;color:var(--navy);font-size:15px;margin-bottom:5px}
-.browserPanel,.linePanel{padding:24px 20px}
-.section-title{font-size:20px;line-height:1.35;margin:0 0 8px;font-weight:800;color:var(--navy)}
-.section-copy{font-size:15px;line-height:1.75;color:var(--muted);margin:0 0 18px}
-.cta{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  width:100%;min-height:56px;padding:14px 16px;border:0;border-radius:13px;
-  background:linear-gradient(135deg,var(--gold),#d6a54c);color:#fff;
-  font-size:18px;font-weight:800;text-decoration:none;box-shadow:0 8px 20px rgba(184,122,34,.22);
-}
-.cta:after{content:"→";font-size:22px}
-.official{text-align:center;margin:11px 0 0;font-size:12px;color:#8a93a0}
-.linePanel{display:none;background:#fffdf8}
-.warn{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:13px;background:#fff5df;border:1px solid #ecd09d;margin-bottom:17px}
-.warnIcon{flex:0 0 34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#f2cc84;font-weight:900}
-.warn strong{display:block;color:var(--navy);font-size:16px;margin:1px 0 4px}.warn p{margin:0;color:#6c5c45;font-size:14px;line-height:1.55}
-.steps{margin:0 0 18px;padding:0;list-style:none;counter-reset:s}
-.steps li{counter-increment:s;position:relative;padding:0 0 14px 43px;min-height:36px;color:#394960;line-height:1.55;font-size:15px}
-.steps li:before{content:counter(s);position:absolute;left:0;top:0;width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:800;font-size:13px}
-.steps li b{color:var(--navy)}
-.copyBtn{width:100%;min-height:48px;border-radius:12px;border:1px solid #c9a25e;background:#fff;color:var(--navy);font-size:15px;font-weight:700}
-.copyMsg{min-height:20px;margin:7px 0 0;text-align:center;font-size:13px;color:#6e7a89}
-.note{margin-top:18px;padding:14px 15px;border-left:3px solid var(--gold);background:#f8f5ef;color:#596678;font-size:13px;line-height:1.65;border-radius:0 10px 10px 0}
-.footer{text-align:center;padding:24px 18px 30px;color:#7a8490;font-size:12px;line-height:1.7}
-.footer strong{display:block;color:var(--navy);font-size:14px;margin-bottom:4px}
-@media(max-width:380px){h1{font-size:30px}.lead{font-size:16px}.quick b{font-size:14px}.quick div{font-size:12px}}
+.page{max-width:560px;margin:0 auto;min-height:100vh;background:#fff;box-shadow:0 0 42px rgba(3,20,42,.10)}
+.hero{position:relative;overflow:hidden;padding:20px 22px 34px;color:#fff;background:linear-gradient(155deg,#061a36 0%,#0b315f 68%,#154a72 100%)}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid rgba(217,173,93,.28);border-radius:50%}
+.hero:before{width:320px;height:320px;left:-205px;top:-145px}.hero:after{width:260px;height:260px;right:-180px;bottom:-150px}
+.topbar{display:flex;justify-content:space-between;gap:12px;align-items:center;position:relative;z-index:2}
+.brand{font-size:12px;letter-spacing:.07em;color:#f2d398;border:1px solid rgba(217,173,93,.72);padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.04)}
+.lang{display:flex;gap:6px}.lang button{border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.06);color:#fff;border-radius:999px;padding:7px 10px;font-weight:700;font-size:12px}.lang button.active{background:#fff;color:var(--navy)}
+.hero h1{position:relative;z-index:2;font-family:"Noto Serif TC","PMingLiU",serif;font-size:36px;line-height:1.25;margin:28px 0 12px;letter-spacing:.02em}
+.hero h1 span{color:#f0c874}.hero p{position:relative;z-index:2;margin:0;max-width:470px;font-size:16px;line-height:1.8;color:#edf2f7}
+.badges{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px;position:relative;z-index:2}.badge{font-size:12px;color:#f4ddb0;border:1px solid rgba(217,173,93,.45);padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.05)}
+.section{padding:26px 20px}.section.alt{background:#fffaf1}.kicker{font-size:12px;letter-spacing:.12em;color:var(--gold);font-weight:800;margin-bottom:8px}.section h2{margin:0 0 10px;color:var(--navy);font-family:"Noto Serif TC","PMingLiU",serif;font-size:27px;line-height:1.35}.intro{margin:0;color:var(--muted);font-size:15px;line-height:1.75}
+.grid{display:grid;gap:12px;margin-top:18px}.feature{border:1px solid var(--line);border-radius:17px;padding:17px 16px;background:#fff;box-shadow:0 8px 22px rgba(14,40,70,.055)}.featureTop{display:flex;gap:12px;align-items:flex-start}.ico{flex:0 0 42px;height:42px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,#0b2d56,#123f70);color:#f0c874;font-size:19px;font-weight:900}.feature h3{margin:1px 0 5px;font-size:18px;color:var(--navy)}.feature p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}
+.quote{margin-top:17px;border-left:3px solid var(--gold);background:#f8f4ec;padding:14px 15px;border-radius:0 12px 12px 0;color:#526174;font-size:14px;line-height:1.7}
+.journey{display:grid;gap:0;margin-top:20px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}.step{display:grid;grid-template-columns:44px 1fr;gap:10px;padding:15px 15px;border-bottom:1px solid #f0e6d4}.step:last-child{border-bottom:0}.stepNo{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-size:13px;font-weight:800;margin-top:2px}.step b{display:block;color:var(--navy);margin-bottom:4px}.step span{color:var(--muted);font-size:14px;line-height:1.55}
+.tourCard{margin-top:18px;border-radius:20px;overflow:hidden;border:1px solid #d7ba82;background:linear-gradient(150deg,#08234a,#0b3565);color:#fff;box-shadow:0 12px 30px rgba(8,35,74,.14)}.tourInner{padding:21px 18px}.tourCard h3{font-size:22px;margin:0 0 8px;color:#f2cf86}.tourCard p{margin:0 0 17px;font-size:14px;line-height:1.7;color:#edf3f8}.cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:55px;border:0;border-radius:13px;padding:14px 15px;background:linear-gradient(135deg,#b87a22,#d6a54c);color:#fff;text-decoration:none;font-size:17px;font-weight:800;box-shadow:0 8px 20px rgba(184,122,34,.24)}.cta:after{content:"→";font-size:22px}.subcta{margin-top:10px;display:flex;align-items:center;justify-content:center;width:100%;min-height:47px;border-radius:12px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-weight:700;font-size:14px}.mini{margin-top:11px;text-align:center;color:#cfd9e5;font-size:12px;line-height:1.55}
+.lineBox{display:none;margin-top:16px;padding:16px;border-radius:15px;background:#fff6df;border:1px solid #ecd09d;color:#634f2e}.lineBox strong{display:block;color:var(--navy);font-size:16px;margin-bottom:5px}.lineBox p{margin:0 0 12px;font-size:14px;line-height:1.6}.copyBtn{width:100%;min-height:46px;border-radius:11px;border:1px solid #c9a25e;background:#fff;color:var(--navy);font-size:14px;font-weight:800}.copyMsg{text-align:center;min-height:19px;margin:7px 0 0;font-size:12px;color:#6c604c}
+.sources{padding:22px 20px 30px;background:#071d3b;color:#b8c5d3;font-size:12px;line-height:1.7;text-align:center}.sources strong{display:block;color:#fff;font-size:14px;margin-bottom:5px}.sources a{color:#e8c77e;text-underline-offset:3px}
+[data-lang]{display:none}body.lang-zh [data-lang="zh"],body.lang-vi [data-lang="vi"]{display:block}body.lang-zh span[data-lang="zh"],body.lang-vi span[data-lang="vi"]{display:inline}
+@media(max-width:390px){.hero h1{font-size:32px}.section h2{font-size:25px}.feature h3{font-size:17px}.brand{font-size:11px}}
 </style>
 </head>
-<body>
+<body class="lang-zh">
 <main class="page">
-  <header class="top">
-    <div class="eyebrow">衛武營國家藝術文化中心・歌劇院</div>
-    <h1>360°走進<br><span class="gold">衛武營歌劇院</span></h1>
-    <p class="lead">買票前，先看看不同樓層、不同座位的觀賞視角。</p>
-  </header>
-
-  <section class="content">
-    <div class="card">
-      <div class="quick">
-        <div><b>看視角</b>先了解座位</div>
-        <div><b>比樓層</b>看看不同位置</div>
-        <div><b>選得安心</b>更貼近期待</div>
-      </div>
-
-      <div id="browserPanel" class="browserPanel">
-        <h2 class="section-title">準備好了？現在就進入歌劇院看看</h2>
-        <p class="section-copy">點下方按鈕，將前往衛武營官方 360° 場館導覽。</p>
-        <a id="tourBtn" class="cta" href="#" rel="noopener">立即體驗 360° 歌劇院</a>
-        <p class="official">官方 360° 場館導覽</p>
-      </div>
-
-      <div id="linePanel" class="linePanel">
-        <div class="warn">
-          <div class="warnIcon">!</div>
-          <div>
-            <strong>您目前使用 LINE 內建瀏覽器</strong>
-            <p>360°互動式場館頁面可能無法在 LINE 內正常顯示。</p>
-          </div>
-        </div>
-        <h2 class="section-title">請先改用手機瀏覽器開啟</h2>
-        <ol class="steps">
-          <li>點 LINE 畫面右下角或右上角的 <b>「⋮」</b></li>
-          <li>選擇 <b>「使用瀏覽器開啟」</b> 或類似選項</li>
-          <li>在 Chrome／Safari 開啟本頁後，再按 <b>「立即體驗 360°」</b></li>
-        </ol>
-        <button id="copyBtn" class="copyBtn" type="button">複製 360° 官方網址</button>
-        <p id="copyMsg" class="copyMsg" aria-live="polite"></p>
+  <header class="hero">
+    <div class="topbar">
+      <div class="brand"><span data-lang="zh">衛武營藝文小旅行</span><span data-lang="vi">Hành trình nghệ thuật Weiwuying</span></div>
+      <div class="lang" aria-label="language switch">
+        <button id="zhBtn" type="button">中文</button><button id="viBtn" type="button">Tiếng Việt</button>
       </div>
     </div>
+    <div data-lang="zh">
+      <h1>來衛武營，<br><span>不只是看一場演出</span></h1>
+      <p>提早一點到，先看看建築、走走榕樹廣場與都會公園，再進歌劇院欣賞神韻。把一場演出，變成一段完整的藝文旅程。</p>
+    </div>
+    <div data-lang="vi">
+      <h1>Đến Weiwuying,<br><span>không chỉ để xem một buổi diễn</span></h1>
+      <p>Hãy đến sớm một chút để ngắm kiến trúc, dạo Quảng trường Banyan và Công viên đô thị Weiwuying, rồi vào Nhà hát Opera thưởng thức Shen Yun. Biến một buổi diễn thành một hành trình nghệ thuật trọn vẹn.</p>
+    </div>
+    <div class="badges">
+      <div class="badge">TIME · World’s Greatest Places 2019</div>
+      <div class="badge"><span data-lang="zh">建築 × 公園 × 劇場 × 360°</span><span data-lang="vi">Kiến trúc × Công viên × Nhà hát × 360°</span></div>
+    </div>
+  </header>
 
-    <div class="note">若 360° 畫面無法開啟，通常是內建瀏覽器相容性問題；改用 Chrome、Safari 或手機預設瀏覽器即可再試。</div>
+  <section class="section">
+    <div data-lang="zh">
+      <div class="kicker">WHY WEIWUYING</div>
+      <h2>衛武營，本身就值得來一次</h2>
+      <p class="intro">這裡不只是演出場地。建築、開放空間、城市綠意與劇場體驗，可以一起構成一段很有質感的半日行程。</p>
+    </div>
+    <div data-lang="vi">
+      <div class="kicker">WHY WEIWUYING</div>
+      <h2>Weiwuying tự thân đã là một điểm đến đáng ghé</h2>
+      <p class="intro">Không chỉ là nơi biểu diễn. Kiến trúc, không gian mở, mảng xanh đô thị và trải nghiệm nhà hát có thể kết hợp thành một hành trình nửa ngày rất đáng nhớ.</p>
+    </div>
+
+    <div class="grid">
+      <article class="feature"><div class="featureTop"><div class="ico">01</div><div>
+        <h3><span data-lang="zh">世界級建築，本身就是景點</span><span data-lang="vi">Kiến trúc đẳng cấp quốc tế, tự thân đã là một điểm tham quan</span></h3>
+        <p><span data-lang="zh">由荷蘭建築師 Francine Houben 以衛武營老榕樹群為靈感，流線屋頂、開放入口與公園景觀彼此連結；衛武營也入選 TIME 2019「World’s Greatest Places」。</span><span data-lang="vi">Công trình do kiến trúc sư Hà Lan Francine Houben lấy cảm hứng từ những cây đa cổ thụ ở Weiwuying; mái uốn lượn, lối vào mở và cảnh quan công viên hòa thành một thể. Weiwuying cũng được TIME chọn vào “World’s Greatest Places 2019”.</span></p>
+      </div></div></article>
+
+      <article class="feature"><div class="featureTop"><div class="ico">02</div><div>
+        <h3><span data-lang="zh">榕樹廣場，進場前就開始有感覺</span><span data-lang="vi">Quảng trường Banyan – trải nghiệm bắt đầu trước khi vào khán phòng</span></h3>
+        <p><span data-lang="zh">半開放的榕樹廣場讓人可以自由穿梭、停留、感受建築尺度與光影。它不是一般劇院只有「入口大廳」的感覺，而是把生活與藝術接在一起。</span><span data-lang="vi">Không gian bán mở của Quảng trường Banyan cho phép bạn thong thả đi dạo, dừng chân và cảm nhận quy mô, ánh sáng của công trình. Đây không chỉ là “sảnh vào” thông thường mà là nơi nghệ thuật hòa vào đời sống.</span></p>
+      </div></div></article>
+
+      <article class="feature"><div class="featureTop"><div class="ico">03</div><div>
+        <h3><span data-lang="zh">旁邊就是大面積都會公園</span><span data-lang="vi">Ngay bên cạnh là công viên đô thị rộng lớn</span></h3>
+        <p><span data-lang="zh">衛武營都會公園約 47 公頃，有草坡、老樹、步道、大片草地與南湖等空間。可以提早來散步、放鬆，讓看演出不只是「趕著進場」。</span><span data-lang="vi">Công viên đô thị Weiwuying rộng khoảng 47 ha, có đồi cỏ, cây cổ thụ, lối đi bộ, bãi cỏ lớn và hồ phía nam. Bạn có thể đến sớm để dạo chơi và thư giãn thay vì chỉ vội vàng vào xem diễn.</span></p>
+      </div></div></article>
+
+      <article class="feature"><div class="featureTop"><div class="ico">04</div><div>
+        <h3><span data-lang="zh">走進歌劇院，演出價值感會被放大</span><span data-lang="vi">Bước vào Nhà hát Opera, giá trị của buổi diễn được nâng lên</span></h3>
+        <p><span data-lang="zh">大型歌劇院的空間、燈光、舞台比例與現場感，會讓大型演出的完整度更突出。對第一次看，或已經看過神韻的人，都是不同的體驗。</span><span data-lang="vi">Không gian, ánh sáng, tỷ lệ sân khấu và cảm giác trực tiếp của một nhà hát opera lớn giúp một chương trình quy mô lớn trở nên trọn vẹn hơn — dù là lần đầu hay bạn đã từng xem Shen Yun.</span></p>
+      </div></div></article>
+    </div>
+    <div class="quote"><span data-lang="zh">重點不是「多一個景點」，而是把看演出前後的時間都變得值得。</span><span data-lang="vi">Điểm hay không phải chỉ là “thêm một điểm tham quan”, mà là khiến cả thời gian trước và sau buổi diễn đều đáng giá.</span></div>
   </section>
 
-  <footer class="footer">
-    <strong>衛武營歌劇院 360° 座位視角</strong>
-    座位視角為場館參考，實際舞台配置與視線依各場演出為準。
+  <section class="section alt">
+    <div data-lang="zh"><div class="kicker">HALF-DAY IDEA</div><h2>可以把這一天安排得很舒服</h2><p class="intro">不用趕行程，提早一點到，就能把衛武營的特色慢慢感受完。</p></div>
+    <div data-lang="vi"><div class="kicker">HALF-DAY IDEA</div><h2>Có thể sắp xếp một buổi thật thư thái</h2><p class="intro">Không cần chạy lịch. Chỉ cần đến sớm một chút là đủ để cảm nhận Weiwuying một cách thong thả.</p></div>
+    <div class="journey">
+      <div class="step"><div class="stepNo">1</div><div><b><span data-lang="zh">提早 60–90 分鐘抵達</span><span data-lang="vi">Đến sớm 60–90 phút</span></b><span><span data-lang="zh">先不用急著進場，讓節奏慢下來。</span><span data-lang="vi">Chưa cần vội vào nhà hát, hãy để nhịp điệu chậm lại.</span></span></div></div>
+      <div class="step"><div class="stepNo">2</div><div><b><span data-lang="zh">看看建築與榕樹廣場</span><span data-lang="vi">Ngắm kiến trúc và Quảng trường Banyan</span></b><span><span data-lang="zh">感受衛武營最有辨識度的空間設計。</span><span data-lang="vi">Cảm nhận không gian kiến trúc đặc trưng nhất của Weiwuying.</span></span></div></div>
+      <div class="step"><div class="stepNo">3</div><div><b><span data-lang="zh">到都會公園走一小段</span><span data-lang="vi">Dạo một vòng Công viên đô thị</span></b><span><span data-lang="zh">草地、樹蔭、步道，讓看表演前的心情先放鬆。</span><span data-lang="vi">Bãi cỏ, bóng cây và lối đi bộ giúp tâm trạng thư giãn trước giờ diễn.</span></span></div></div>
+      <div class="step"><div class="stepNo">4</div><div><b><span data-lang="zh">進場前先用 360° 看座位</span><span data-lang="vi">Xem trước chỗ ngồi bằng 360°</span></b><span><span data-lang="zh">先了解樓層與視角，選位或找座位更安心。</span><span data-lang="vi">Hiểu trước tầng và góc nhìn để chọn hoặc tìm chỗ ngồi yên tâm hơn.</span></span></div></div>
+      <div class="step"><div class="stepNo">5</div><div><b><span data-lang="zh">走進歌劇院，欣賞神韻</span><span data-lang="vi">Bước vào Nhà hát Opera và thưởng thức Shen Yun</span></b><span><span data-lang="zh">把一場演出，變成一段完整的藝文旅程。</span><span data-lang="vi">Biến một buổi diễn thành một hành trình nghệ thuật trọn vẹn.</span></span></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div data-lang="zh"><div class="kicker">360° PREVIEW</div><h2>買票前，先走進歌劇院看看</h2><p class="intro">衛武營官方提供 360° 場館導覽，可以先看看不同樓層與座位的觀賞視角。</p></div>
+    <div data-lang="vi"><div class="kicker">360° PREVIEW</div><h2>Trước khi mua vé, hãy bước vào nhà hát bằng 360°</h2><p class="intro">Weiwuying có tour 360° chính thức để bạn xem trước góc nhìn ở các tầng và vị trí ghế khác nhau.</p></div>
+
+    <div class="tourCard">
+      <div class="tourInner">
+        <h3><span data-lang="zh">歌劇院 360° 座位視角</span><span data-lang="vi">Góc nhìn ghế ngồi 360° của Nhà hát Opera</span></h3>
+        <p><span data-lang="zh">如果你現在使用 Chrome、Safari 或手機預設瀏覽器，可以直接進入官方 360° 導覽。</span><span data-lang="vi">Nếu đang dùng Chrome, Safari hoặc trình duyệt mặc định của điện thoại, bạn có thể vào ngay tour 360° chính thức.</span></p>
+        <a id="tourBtn" class="cta" href="#" rel="noopener"><span data-lang="zh">立即體驗 360° 歌劇院</span><span data-lang="vi">Trải nghiệm Nhà hát Opera 360°</span></a>
+        <div id="lineBox" class="lineBox">
+          <strong><span data-lang="zh">你目前使用 LINE 內建瀏覽器</span><span data-lang="vi">Bạn đang dùng trình duyệt tích hợp của LINE</span></strong>
+          <p><span data-lang="zh">360°互動頁面可能無法正常顯示。建議改用 Chrome／Safari 開啟本頁，再進入 360°。</span><span data-lang="vi">Trang 360° có thể không hiển thị đúng trong LINE. Hãy mở trang này bằng Chrome/Safari rồi vào tour 360°.</span></p>
+          <a id="externalBtn" class="subcta" href="#"><span data-lang="zh">改用外部瀏覽器開啟本頁</span><span data-lang="vi">Mở trang này bằng trình duyệt ngoài</span></a>
+          <button id="copyBtn" class="copyBtn" type="button"><span data-lang="zh">複製 360° 官方網址</span><span data-lang="vi">Sao chép đường dẫn 360° chính thức</span></button>
+          <p id="copyMsg" class="copyMsg" aria-live="polite"></p>
+        </div>
+        <div class="mini"><span data-lang="zh">座位視角為場館參考，實際舞台配置與視線依各場演出為準。</span><span data-lang="vi">Góc nhìn chỉ mang tính tham khảo; bố trí sân khấu thực tế tùy từng chương trình.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="sources">
+    <strong><span data-lang="zh">衛武營，不只是劇場，也是高雄很值得走一走的地方。</span><span data-lang="vi">Weiwuying không chỉ là nhà hát mà còn là một nơi rất đáng để khám phá ở Cao Hùng.</span></strong>
+    <span data-lang="zh">資料參考：</span><span data-lang="vi">Nguồn tham khảo：</span>
+    <a href="https://learning.npac-weiwuying.org/" target="_blank" rel="noopener">衛武營藝術學習網</a> ·
+    <a href="https://khh.travel/zh-tw/attractions/detail/178/" target="_blank" rel="noopener">高雄旅遊網｜衛武營</a> ·
+    <a href="https://khh.travel/zh-tw/attractions/detail/238/" target="_blank" rel="noopener">衛武營都會公園</a>
   </footer>
 </main>
 
 <script>
 (function(){
   const TOUR_URL='https://360viewtour.npac-weiwuying.org/home/matterport?language=.chinese&place=.menu_sl_4';
+  const SELF_EXTERNAL='https://socialimpactlab0.github.io/weiwuying360/?openExternalBrowser=1';
   const ua=navigator.userAgent||'';
   const isLine=/Line\//i.test(ua);
-  const linePanel=document.getElementById('linePanel');
-  const browserPanel=document.getElementById('browserPanel');
+  const body=document.body;
+  const zhBtn=document.getElementById('zhBtn');
+  const viBtn=document.getElementById('viBtn');
   const tourBtn=document.getElementById('tourBtn');
+  const externalBtn=document.getElementById('externalBtn');
+  const lineBox=document.getElementById('lineBox');
   const copyBtn=document.getElementById('copyBtn');
   const copyMsg=document.getElementById('copyMsg');
 
-  tourBtn.href=TOUR_URL;
-  if(isLine){
-    linePanel.style.display='block';
-    browserPanel.style.display='none';
-  }else{
-    linePanel.style.display='none';
-    browserPanel.style.display='block';
+  function setLang(lang){
+    body.classList.toggle('lang-zh',lang==='zh');
+    body.classList.toggle('lang-vi',lang==='vi');
+    zhBtn.classList.toggle('active',lang==='zh');
+    viBtn.classList.toggle('active',lang==='vi');
+    document.documentElement.lang=lang==='vi'?'vi':'zh-Hant';
+    localStorage.setItem('wyLang',lang);
   }
+  const saved=localStorage.getItem('wyLang');
+  const auto=(navigator.language||'').toLowerCase().startsWith('vi')?'vi':'zh';
+  setLang(saved||auto);
+  zhBtn.addEventListener('click',()=>setLang('zh'));
+  viBtn.addEventListener('click',()=>setLang('vi'));
+
+  tourBtn.href=TOUR_URL;
+  externalBtn.href=SELF_EXTERNAL;
+  lineBox.style.display=isLine?'block':'none';
 
   copyBtn.addEventListener('click',async function(){
     try{
       await navigator.clipboard.writeText(TOUR_URL);
-      copyMsg.textContent='已複製，請貼到 Chrome／Safari 開啟。';
     }catch(e){
-      const ta=document.createElement('textarea');
-      ta.value=TOUR_URL;document.body.appendChild(ta);ta.select();
-      document.execCommand('copy');document.body.removeChild(ta);
-      copyMsg.textContent='已複製，請貼到 Chrome／Safari 開啟。';
+      const ta=document.createElement('textarea');ta.value=TOUR_URL;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
     }
+    copyMsg.textContent=body.classList.contains('lang-vi')?'Đã sao chép. Hãy dán vào Chrome/Safari.':'已複製，請貼到 Chrome／Safari 開啟。';
   });
 })();
 </script>
