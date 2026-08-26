@@ -3,6 +3,7 @@
   const TICKET='https://zh-tw.shenyun.com/kaohsiung/city/kaohsiung?_tuid=caee55e3-a050-41f0-a21d-dd3dc3456a68';
   const ua=navigator.userAgent||'';
   const isLine=/Line\//i.test(ua);
+  if(isLine) document.documentElement.classList.add('is-line');
 
   function externalize(url){
     const u=new URL(url,location.href);
@@ -32,8 +33,6 @@
     });
   }
 
-  /* Replace three photo URLs that block or fail hot-linking on GitHub Pages.
-     Wikimedia Commons URLs below are stable public image endpoints. */
   const PHOTO_FIXES={
     'https://learning.npac-weiwuying.org/files/d69d6511b8cae4625ad2c8e8b8d40ab81338dfbc.jpg':'https://upload.wikimedia.org/wikipedia/commons/4/47/%E6%A6%95%E6%A8%B9%E5%BB%A3%E5%A0%B4_Banyan_Plaza_%2846087020144%29.jpg',
     'https://takao.kcg.gov.tw/public/article/a0/707/atl_707_20220105094145_356.jpg':'https://upload.wikimedia.org/wikipedia/commons/4/48/Wei-Wu-Ying_Center_for_the_Arts_01_%28cropped%29.jpg',
@@ -68,7 +67,6 @@
     io.observe(shenyun);
   }
 
-  /* Add concise photo attribution required by the replacement images' licenses. */
   const footer=document.querySelector('.footer');
   if(footer){
     const credit=document.createElement('div');
@@ -76,7 +74,4 @@
     credit.innerHTML='Photo credits: Banyan Plaza — yunlin2003 / CC BY-SA 2.0; aerial view — Kaohsiung Travel / Government Website Open Information Announcement; north plaza — Jimmy3357569 / CC BY-SA 4.0. Images via Wikimedia Commons.';
     footer.appendChild(credit);
   }
-
-  // Landing page stays inside LINE. Only 360° and ticket links are handed off
-  // to the external browser, because those destinations need better compatibility.
 })();
