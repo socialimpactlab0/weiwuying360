@@ -10,14 +10,11 @@
     return u.toString();
   }
 
-  const tourLinks=[...document.querySelectorAll('#tourBtn,[data-tour]')];
-  const ticketLinks=[...document.querySelectorAll('.ticket .cta,.sticky a,[data-ticket]')];
-
-  tourLinks.forEach(a=>{
+  document.querySelectorAll('[data-tour],#tourBtn').forEach(a=>{
     a.href=isLine?externalize(TOUR):TOUR;
     if(isLine) a.removeAttribute('target');
   });
-  ticketLinks.forEach(a=>{
+  document.querySelectorAll('[data-ticket],.ticket .cta,.sticky a').forEach(a=>{
     a.href=isLine?externalize(TICKET):TICKET;
     if(isLine) a.removeAttribute('target');
   });
@@ -35,19 +32,30 @@
     });
   }
 
+  const routeButtons=[...document.querySelectorAll('[data-route-target]')];
+  const routePanels=[...document.querySelectorAll('[data-route-panel]')];
+  routeButtons.forEach(btn=>btn.addEventListener('click',()=>{
+    const id=btn.dataset.routeTarget;
+    routeButtons.forEach(b=>b.classList.toggle('active',b===btn));
+    routePanels.forEach(p=>p.classList.toggle('active',p.dataset.routePanel===id));
+  }));
+
+  const revealEls=[...document.querySelectorAll('.reveal')];
+  if('IntersectionObserver' in window){
+    const revealIO=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('seen');revealIO.unobserve(e.target)}})
+    },{threshold:.12});
+    revealEls.forEach(el=>revealIO.observe(el));
+  }else revealEls.forEach(el=>el.classList.add('seen'));
+
   const sticky=document.getElementById('sticky');
   const shenyun=document.getElementById('shenyun');
   if(sticky&&shenyun){
     let revealed=false;
-    const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting&&!revealed){revealed=true;sticky.classList.add('show')}})},{threshold:.2});
+    const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting&&!revealed){revealed=true;sticky.classList.add('show')}})},{threshold:.18});
     io.observe(shenyun);
   }
 
-  if(isLine){
-    const current=new URL(location.href);
-    if(current.searchParams.get('openExternalBrowser')!=='1'){
-      current.searchParams.set('openExternalBrowser','1');
-      setTimeout(()=>location.replace(current.toString()),80);
-    }
-  }
+  // Landing page stays inside LINE. Only 360° and ticket links are handed off
+  // to the external browser, because those destinations need better compatibility.
 })();
