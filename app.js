@@ -10,17 +10,20 @@
     return u.toString();
   }
 
-  document.querySelectorAll('[data-tour]').forEach(a=>{
+  const tourLinks=[...document.querySelectorAll('#tourBtn,[data-tour]')];
+  const ticketLinks=[...document.querySelectorAll('.ticket .cta,.sticky a,[data-ticket]')];
+
+  tourLinks.forEach(a=>{
     a.href=isLine?externalize(TOUR):TOUR;
     if(isLine) a.removeAttribute('target');
   });
-  document.querySelectorAll('[data-ticket]').forEach(a=>{
+  ticketLinks.forEach(a=>{
     a.href=isLine?externalize(TICKET):TICKET;
     if(isLine) a.removeAttribute('target');
   });
 
   const box=document.getElementById('lineBox');
-  if(box && isLine) box.style.display='block';
+  if(box&&isLine) box.style.display='block';
 
   const copy=document.getElementById('copyBtn');
   const msg=document.getElementById('copyMsg');
@@ -40,9 +43,6 @@
     io.observe(shenyun);
   }
 
-  // If the landing page itself was opened inside LINE, immediately try to hand it off
-  // to the phone's external browser. If LINE ignores programmatic navigation, the
-  // 360° and ticket buttons above still contain openExternalBrowser=1 as a fallback.
   if(isLine){
     const current=new URL(location.href);
     if(current.searchParams.get('openExternalBrowser')!=='1'){
