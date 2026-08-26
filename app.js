@@ -23,16 +23,6 @@
   const box=document.getElementById('lineBox');
   if(box&&isLine) box.style.display='block';
 
-  const copy=document.getElementById('copyBtn');
-  const msg=document.getElementById('copyMsg');
-  if(copy){
-    copy.addEventListener('click',async()=>{
-      try{await navigator.clipboard.writeText(TOUR)}
-      catch(e){const t=document.createElement('textarea');t.value=TOUR;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}
-      if(msg) msg.textContent=document.documentElement.lang==='vi'?'Đã sao chép. Hãy dán vào Chrome hoặc Safari.':document.documentElement.lang==='en'?'Copied. Paste it into Chrome or Safari.':'已複製，請貼到 Chrome／Safari 開啟。';
-    });
-  }
-
   const PHOTO_FIXES={
     'https://learning.npac-weiwuying.org/files/d69d6511b8cae4625ad2c8e8b8d40ab81338dfbc.jpg':'https://upload.wikimedia.org/wikipedia/commons/4/47/%E6%A6%95%E6%A8%B9%E5%BB%A3%E5%A0%B4_Banyan_Plaza_%2846087020144%29.jpg',
     'https://takao.kcg.gov.tw/public/article/a0/707/atl_707_20220105094145_356.jpg':'https://upload.wikimedia.org/wikipedia/commons/4/48/Wei-Wu-Ying_Center_for_the_Arts_01_%28cropped%29.jpg',
